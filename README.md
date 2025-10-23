@@ -1,6 +1,6 @@
 # avance-2-estadistica
 
-
+DICCIONARIO
 | **Variable** | **Descripción** | **Tipo de variable** | **Valores o categorías** |
 |---------------|-----------------|----------------------|---------------------------|
 | **DOMINIO** | Región o zona geográfica de residencia del hogar | Categórica | Costa Norte, Costa Sur, Sierra Centro, Sierra Sur, Selva, etc. |
@@ -15,4 +15,4 @@
 | **TrabajaPerú** | Indica si el entrevistado fue beneficiario del programa Trabaja Perú | Binaria (independiente principal) | 1 = Beneficiario, 0 = No beneficiario |
 | **FACTOR07** | Factor de expansión muestral de la ENAHO (pondera los casos para representar a la población nacional) | Numérica continua | > 0 (según diseño muestral) |
 | **Situación de Vulnerabilidad** | Condición socioeconómica del entrevistado o del hogar | Categórica (control) | Pobre Extremo, Pobre No Extremo, Vulnerable No Pobre, No Pobre |
-trabajo final de estadistica para el analisis politico 222222
+
