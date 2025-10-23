@@ -1,2 +1,2 @@
 # avance-2-estadistica
-trabajo final de estadistica para el analisis politico 2
+trabajo final de estadistica para el analisis politico 222222
