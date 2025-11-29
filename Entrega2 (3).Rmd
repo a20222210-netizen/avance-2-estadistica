@@ -1,0 +1,100 @@
+---
+title: "Entrega 2"
+output: html_document
+date: "2025-10-21"
+---
+
+```{r}
+library(rio)
+library(dplyr)
+```
+
+```{r}
+Sumaria=import("Sumaria-2024.sav")
+enaho700=import("Enaho01-2024-700.sav")
+enaho500=import("Enaho01a-2024-500.sav")
+```
+
+```{r}
+Sumaria=Sumaria %>% 
+  select(DOMINIO,UBIGEO,CONGLOME,VIVIENDA,HOGAR,POBREZAV)
+
+enaho700=enaho700 %>% 
+  select(DOMINIO,UBIGEO,CONGLOME,VIVIENDA,HOGAR,`P710$08`,FACTOR07)
+
+enaho500=enaho500 %>% 
+  select(DOMINIO,UBIGEO,CONGLOME,VIVIENDA,HOGAR,P501,P301A,P207,P208A)
+```
+
+```{r}
+enaho1=merge(enaho700,enaho500, all = T)
+enaho=merge(enaho1,Sumaria, all = T)
+```
+
+```{r}
+enaho=enaho %>% 
+  filter(P208A >=18) %>% 
+  filter(POBREZAV==1|POBREZAV==2|POBREZAV==3) %>% 
+  na.omit()
+```
+
+
+```{r}
+enaho=enaho %>% 
+  mutate(P501 = ifelse(P501 == 2, 0, P501)) %>% 
+  rename(TuvoTrabajo=P501,
+         Edad=P208A,
+         TrabajaPerú=`P710$08`,
+         Sexo=P207,
+         Educacion=P301A,
+         `Situación de Vulnerabilidad`=POBREZAV) 
+
+```
+
+
+```{r}
+export(enaho,"Base de Datos - Estadística 2.csv")
+```
+
+
+```{r}
+enaho=enaho %>%
+  mutate(DOMINIO= case_when(DOMINIO == 1 ~ "Costa Norte",
+                            DOMINIO == 2 ~ "Costa Centro",
+                            DOMINIO == 3 ~ "Costa Sur",
+                            DOMINIO == 4 ~ "Sierra Norte", 
+                            DOMINIO == 5 ~ "Sierra Centro", 
+                            DOMINIO == 6 ~ "Sierra Sur",
+                            DOMINIO == 7 ~ "Selva",
+                            DOMINIO == 8 ~ "Lima Metropolitana")) %>% 
+  mutate(Sexo=case_when(Sexo==1~"Hombre",
+                        Sexo==2~"Mujer")) %>% 
+  mutate(`Situación de Vulnerabilidad` = case_when(
+      `Situación de Vulnerabilidad` == 1 ~ "Pobre Extremo",
+      `Situación de Vulnerabilidad` == 2 ~ "Pobre No Extremo",
+      `Situación de Vulnerabilidad` == 3 ~ "Vulnerable No Pobre",
+      `Situación de Vulnerabilidad` == 4 ~ "No Vulnerable")) %>% 
+  mutate(Educacion = case_when(
+      Educacion == 1  ~ "Sin Nivel",
+      Educacion == 2  ~ "Inicial",
+      Educacion == 3  ~ "Primaria Incompleta",
+      Educacion == 4  ~ "Primaria Completa",
+      Educacion == 5  ~ "Secundaria Incompleta",
+      Educacion == 6  ~ "Secundaria Completa",
+      Educacion == 7  ~ "Superior No Universitaria Incompleta",
+      Educacion == 8  ~ "Superior No Universitaria Completa",
+      Educacion == 9  ~ "Superior Universitaria Incompleta",
+      Educacion == 10 ~ "Superior Universitaria Completa",
+      Educacion == 11 ~ "Maestría/Doctorado",
+      Educacion == 12 ~ "Básica especial"))
+
+```
+
+```{r}
+export(enaho,"Base de Datos con Etiquetas - Estadística 2.csv")
+```
+
+
+
+
+
