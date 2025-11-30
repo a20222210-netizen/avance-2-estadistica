@@ -1,5 +1,5 @@
 # avance-2-estadistica
-Impacto del programa Trabaja Perú en las en la empleabilidad de los beneficiarios en el Perú.
+## Impacto del programa Trabaja Perú en las en la empleabilidad de los beneficiarios en el Perú.
 Preguntas a responder:
 # ¿Por qué el tema escogido es relevante en un sentido teórico o práctico?
 El análisis del programa Trabaja Perú es relevante en un marco teórico, porque aborda directamente las relaciones entre intervención pública-laboral, capital humano y empleabilidad. El Decreto Supremo N.º 012-2011-TR, que creó el programa, señala su fin en “generar empleo, desarrollar capacidades productivas y promover el empleo sostenido y de calidad en la población desempleada y subempleada de las áreas urbanas y rurales, en condición de pobreza y extrema pobreza”. Esto permite vincular la teoría del capital humano y del empleo inclusivo con la práctica estatal, evaluando si el aumento en capacidades y la generación de empleo temporal contribuyen efectivamente a mejores resultados laborales.
