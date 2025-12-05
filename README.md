@@ -33,8 +33,7 @@ o	Tipo: ordinal
 o	Justificación: La educación incrementa las oportunidades de empleo y productividad de los beneficiarios
 
 # 5. Variables de control:
-•	Región  de dominio (Costa norte , costa sur, Sierra centro, Selva sur, etc)
-o	Tipo: Categórica.
+•	Región  de dominio (Costa norte , costa sur, Sierra centro, Selva sur, etc) Tipo: Categórica.
 o	Justificación: Existen grandes desigualdades regionales en el acceso al empleo y al desarrollo económico, por lo que controlar la región permite captar diferencias estructurales en las oportunidades laborales.
 •	Situación de vulnerabilidad 
 o	Tipo: categórica
